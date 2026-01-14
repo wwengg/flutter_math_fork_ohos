@@ -294,6 +294,7 @@ class SelectableMath extends StatelessWidget {
       case TargetPlatform.fuchsia:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
+      case TargetPlatform.ohos:
         forcePressEnabled = false;
         textSelectionControls ??= materialTextSelectionControls;
         paintCursorAboveText = false;
@@ -481,6 +482,7 @@ class InternalSelectableMathState extends State<InternalSelectableMath>
       case TargetPlatform.fuchsia:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
+      case TargetPlatform.ohos:
       // Do nothing.
     }
   }
@@ -600,7 +602,7 @@ class SelectionStyle {
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode => hashValues(
         cursorColor,
         cursorOffset,
         cursorRadius,
